@@ -242,6 +242,18 @@ When two selectors have the same level of specificity, the rule that is defined 
 
 In the above example, the selector last_declared would override the first_declared selector. Any html element with both of those classes would have the styles defined in .last_declared instead of .first_declared.
 
+The .first_declared class has rules for color and font-size, while the .last_declared class has rules for font-size and font-weight. If an HTML element has both classes applied to it, the order of the rules in your CSS will determine which styles take precedence.
+
+In this case, because .last_declared is declared after .first_declared, its rules for font-size and font-weight would override those defined in .first_declared. However, the color property from .first_declared would still be applied.
+
+So, an HTML element with both classes would have the following styles:
+
+Background color: rgb(200, 50, 150)
+Color: rgb(50, 50, 200) (from .first_declared)
+Font size: 14px (from .last_declared)
+Font weight: 800 (from .last_declared)
+Remember that in cases where specific properties are defined in both classes, the order of the rules in your CSS file determines which one takes precedence.
+
 ### Properties to get started with
 
 There are some CSS properties that you're going to be using all the time, or at the very least more often than not. We're going to introduce you to several of these properties, though this is by no means a complete list. Learning the following properties will simply be enough to help get you started.
